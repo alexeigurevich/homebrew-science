@@ -1,11 +1,11 @@
 class Quast < Formula
   desc "QUAST: Quality Assessment Tool for Genome Assemblies"
   homepage "http://quast.sourceforge.net"
-  # doi "10.1093/bioinformatics/btt086", "10.1093/bioinformatics/btw379"
+  # doi "10.1093/bioinformatics/btt086", "10.1093/bioinformatics/btv697", "10.1093/bioinformatics/btw379"
   # tag "bioinformatics"
 
-  url "https://downloads.sourceforge.net/project/quast/quast-4.2.tar.gz"
-  sha256 "fbaa1b5fe0cbbcbbedaafebce5a922250ad7b916fc7538b73cd16c3d70226db3"
+  url "https://downloads.sourceforge.net/project/quast/quast-4.3.tar.gz"
+  sha256 "2fb7858842ee2dfd8ce4082b88fb280c384d99979655c8dd8449259eb00de86d"
 
   bottle do
     cellar :any_skip_relocation
