@@ -21,8 +21,15 @@ class Quast < Formula
     # Mavericks and newer include matplotlib
     depends_on "matplotlib" => :python
   end
+  depends_on "e-mem"
 
   def install
+    # removing precompiled E-MEM binaries causing troubles with brew audit
+    mv "quast_libs/E-MEM-osx/nucmer", "quast_libs/"
+    rm_r "quast_libs/E-MEM-osx"
+    mkdir "quast_libs/E-MEM-osx"
+    # QUAST needs quast_libs/E-MEM-osx/nucmer to ensure that E-MEM binaries are not working
+    mv "quast_libs/nucmer", "quast_libs/E-MEM-osx/nucmer"
     prefix.install Dir["*"]
     bin.install_symlink "../quast.py", "../metaquast.py",
       "quast.py" => "quast", "metaquast.py" => "metaquast"
