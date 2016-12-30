@@ -1,6 +1,6 @@
 class Quast < Formula
   desc "QUAST: Quality Assessment Tool for Genome Assemblies"
-  homepage "http://quast.sourceforge.net"
+  homepage "http://cab.spbu.ru/software/quast/"
   # doi "10.1093/bioinformatics/btt086", "10.1093/bioinformatics/btv697", "10.1093/bioinformatics/btw379"
   # tag "bioinformatics"
 
