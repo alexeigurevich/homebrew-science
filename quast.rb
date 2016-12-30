@@ -4,8 +4,8 @@ class Quast < Formula
   # doi "10.1093/bioinformatics/btt086", "10.1093/bioinformatics/btv697", "10.1093/bioinformatics/btw379"
   # tag "bioinformatics"
 
-  url "http://quast.sf.net/quast-4.4.1.tar.gz"
-  sha256 "e31510726b3dbcc43b866522191f936a5602b3247ef64a687fdcda674cbe38d0"
+  url "http://cab.spbu.ru/wp-content/uploads/2016/04/quast-4.4.1.tar.gz"
+  sha256 "73ccf6bfc20503e6c72e0479a073aadd4319a36badba15b0810217b27e078ea3"
 
   bottle do
     cellar :any_skip_relocation
@@ -24,12 +24,8 @@ class Quast < Formula
   depends_on "e-mem"
 
   def install
-    # removing precompiled E-MEM binaries causing troubles with brew audit
-    mv "quast_libs/E-MEM-osx/nucmer", "quast_libs/"
-    rm_r "quast_libs/E-MEM-osx"
-    mkdir "quast_libs/E-MEM-osx"
-    # QUAST needs quast_libs/E-MEM-osx/nucmer to ensure that E-MEM binaries are not working
-    mv "quast_libs/nucmer", "quast_libs/E-MEM-osx/nucmer"
+    # removing precompiled E-MEM binary causing troubles with brew audit
+    rm "quast_libs/E-MEM-osx/e-mem"
     prefix.install Dir["*"]
     bin.install_symlink "../quast.py", "../metaquast.py",
       "quast.py" => "quast", "metaquast.py" => "metaquast"
